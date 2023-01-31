@@ -35,4 +35,4 @@ def get_lyrics():
 
 @current_app.route("/get_hot")
 def get_hot():
-    return dict(hot=[i.title for i in reddit.get_hot()])
+    return dict(hot=reddit.get_hot())

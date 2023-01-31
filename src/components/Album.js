@@ -26,6 +26,8 @@ function Album() {
 				<div className="text-center sticky-top pt-5">
 					<img width="300" height="300" src={album.cover_art_url} className="rounded mb-3"/>
 					<div className="heading fs-1 fst-italic">{album.name}</div>
+					<div className="heading mb-1"><Link to={`/artist/${album.artist.id}`}>{album.artist.name}</Link></div>
+					<div className="heading mb-2">{album.release_date_components.year}</div>
 					<div className="heading small">{tracks.length} track(s)</div>
 				</div>
 			</div>

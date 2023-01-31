@@ -1,11 +1,16 @@
 import praw
 
+from api import config
+
 reddit = praw.Reddit(
-    client_id="3w1z65bGLrtdLA",
-    user_agent="newapp",
-    client_secret="2vHRL35CdtLCu7AFsEf-fz3iQBI",
+    client_id=config.CLIENT_ID,
+    user_agent=config.USER_AGENT,
+    client_secret=config.CLIENT_SECRET,
 )
 
 
 def get_hot():
-    return reddit.subreddit("HipHopHeads").hot(limit=10)
+    return [
+        dict(title=i.title, url=i.url)
+        for i in reddit.subreddit("HipHopHeads").hot(limit=15)
+    ]

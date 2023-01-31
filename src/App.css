@@ -8,7 +8,7 @@ html[data-theme='dark'] {
 	--primary-txt: #cccccc;
 }
 
-body, .form-control, .form-control:focus, .dropdown-menu, .dropdown-item {
+body, .form-control, .form-control:focus, .dropdown-menu, .dropdown-item, .modal-content {
 	background-color: var(--primary-bg);
 	color: var(--primary-txt);
 }
@@ -23,13 +23,17 @@ a, a:hover, .navbar-brand, .navbar-brand:hover {
 	cursor: pointer;
 }
 
+.modal-content {
+	border: 1px solid darkorange;
+}
+
 .btn-outline-secondary {
 	background-color: var(--primary-bg);
 	border-color: var(--primary-txt);
 	color: var(--primary-txt);
 }
 
-.btn-outline-secondary:hover, .dropdown-item:hover, .dropdown-toggle.show {
+.btn-outline-secondary:hover, .dropdown-item:hover, .dropdown-toggle.show, .btn-outline-secondary.active {
 	background-color: darkorange;
 	border-color: darkorange;
 	color: #1a1a1a;

@@ -41,7 +41,7 @@ function Song() {
 			{loading&&<span className="spinner-border spinner-border-sm"></span>}
 			<Player song={track} />
 				<div className="btn-group btn-group-sm">
-					<a onClick={() => getLyrics()} className="btn btn-outline-secondary"><i className="bi bi-quote"></i> Lyrics</a>
+					<a onClick={() => lyrics === '' ? getLyrics() : setLyrics('') } className={'btn btn-outline-secondary' + (lyrics != '' ? ' active' : '') }><i className="bi bi-quote"></i> Lyrics</a>
 					{lyrics != '' && <a onClick={() => copyLyrics()} className={'btn btn-outline-'+ (copied?'success':'secondary')}><i className={'bi bi-'+ (copied?'check-lg':'clipboard')}></i> Copy</a>}
 				</div>
 			<div className="mt-4 fst-italic" style={{ whiteSpace:'pre-wrap' }}>{lyrics}</div>
