@@ -1,0 +1,32 @@
+{
+  "name": "marmalade",
+  "version": "0.9.9",
+  "proxy": "http://localhost:5000/",
+  "dependencies": {
+    "react-router-dom": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
+    "bootstrap": "latest",
+    "bootstrap-icons": "latest",
+    "jquery": "latest",
+    "concurrently": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-api": "python3 api/server.py",
+    "dev": "concurrently \"python3 api/server.py\" \"react-scripts start\" ",
+    "build": "react-scripts build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
