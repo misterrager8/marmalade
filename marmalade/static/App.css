@@ -1,0 +1,115 @@
+:root,
+html[data-theme="light"] {
+  --primary-bg: #cccccc;
+  --primary-txt: #1a1a1a;
+  --btn-color: #1a1a1a;
+  --btn-hover-text: #cccccc;
+}
+
+html[data-theme="dark"] {
+  --primary-bg: #1a1a1a;
+  --primary-txt: #cccccc;
+  --btn-color: #cccccc;
+  --btn-hover-text: #1a1a1a;
+}
+
+html[data-theme="ocean"] {
+  --primary-bg: #1a1a1a;
+  --primary-txt: #9ab3f8;
+  --btn-color: #9ab3f8;
+  --btn-hover-text: #1a1a1a;
+}
+
+a,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-txt);
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--btn-color);
+  border-color: var(--btn-color);
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  background-color: var(--btn-color);
+  color: var(--btn-hover-text);
+  border-color: transparent;
+}
+
+.form-control,
+.form-control:focus {
+  border-color: var(--primary-txt);
+  background-color: transparent;
+  color: var(--primary-txt);
+}
+
+::placeholder {
+  color: var(--primary-txt) !important;
+  letter-spacing: 2px !important;
+  opacity: 50% !important;
+}
+
+.between {
+  justify-content: space-between;
+  display: flex;
+}
+
+.hover:hover {
+  border-bottom: 1px dotted var(--primary-txt);
+}
+
+.dropdown-menu {
+  background-color: var(--primary-bg);
+  color: var(--primary-txt);
+  border-color: var(--primary-txt);
+}
+
+.dropdown-item {
+  color: var(--primary-txt);
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-txt);
+  color: var(--primary-bg);
+}
+
+.form-text {
+  color: var(--primary-txt);
+}
+
+.badge {
+  color: var(--primary-txt);
+  font-weight: unset;
+  border: 1px solid var(--primary-txt);
+  padding: 2px 10px;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-control.border-0 {
+  border-radius: 0;
+}
+
+.border-start,
+hr {
+  border-color: var(--primary-txt) !important;
+  border-style: dotted !important;
+  opacity: 100%;
+}
+
+.screen {
+  height: 600px;
+  overflow-y: auto;
+  border-right: 1px dotted var(--primary-txt);
+}
