@@ -1,0 +1,44 @@
+@import "./colors.css";
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-txt);
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--btn-color);
+  border-color: var(--btn-color);
+  letter-spacing: 1.5px;
+}
+
+.btn:hover,
+.btn.active {
+  background-color: var(--btn-color);
+  color: var(--btn-hover-txt);
+  border-color: var(--btn-color);
+}
+
+.form-control,
+.form-control:focus {
+  border: 0;
+  background-color: var(--secondary-bg);
+  color: var(--primary-txt);
+}
+
+.dropdown-menu,
+.dropdown-item {
+  background-color: var(--primary-bg);
+  color: var(--primary-txt);
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: var(--btn-color);
+  color: var(--btn-hover-txt);
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+}
