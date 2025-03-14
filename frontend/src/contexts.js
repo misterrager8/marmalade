@@ -6,6 +6,7 @@ export default function MultiProvider({ children }) {
   const [theme, setTheme] = useState(
     localStorage.getItem("marmalade-theme") || "dark"
   );
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("marmalade-theme", theme);
@@ -15,6 +16,8 @@ export default function MultiProvider({ children }) {
   const contextValue = {
     theme: theme,
     setTheme: setTheme,
+    loading: loading,
+    setLoading: setLoading,
   };
 
   return (
