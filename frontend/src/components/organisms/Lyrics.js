@@ -5,7 +5,7 @@ import { MultiContext } from "../../contexts";
 import Button from "../atoms/Button";
 import LineItem from "./LineItem";
 
-export default function Search({ className = "" }) {
+export default function Lyrics({ className = "" }) {
   const multiCtx = useContext(MultiContext);
 
   const [term, setTerm] = useState("");
@@ -14,6 +14,8 @@ export default function Search({ className = "" }) {
   const [lyrics, setLyrics] = useState([]);
   const [lyricData, setLyricData] = useState([]);
   const [mode, setMode] = useState("text");
+
+  const [copied, setCopied] = useState(false);
 
   const onChangeTerm = (e) => setTerm(e.target.value);
 
@@ -41,6 +43,14 @@ export default function Search({ className = "" }) {
       setLyricData(data.lyricData);
       multiCtx.setLoading(false);
     });
+  };
+
+  const copyLyrics = () => {
+    let allLyrics = lyrics.join("\n");
+    navigator.clipboard.writeText(allLyrics);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000);
   };
 
   return (
@@ -86,6 +96,11 @@ export default function Search({ className = "" }) {
         {selectedAlbum && (
           <div className="w-50 px-3 ">
             <div className="d-flex">
+              <Button
+                text="Copy"
+                icon={copied ? "check-lg" : "clipboard"}
+                onClick={() => copyLyrics()}
+              />
               <span className="btn btn-sm non-btn">{selectedAlbum.name}</span>
               {lyrics !== "" && lyricData.length > 0 && (
                 <Button
@@ -94,23 +109,12 @@ export default function Search({ className = "" }) {
                 />
               )}
             </div>
-            <div className="mt-4 overflow-auto" style={{ height: "80vh" }}>
-              {mode === "stats" ? (
-                <div>
-                  {lyricData.map((x) => (
-                    <div className="row">
-                      <span className="col fst-italic">{x[0]}</span>
-                      <span className="col">{x[1]}</span>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="">
-                  {lyrics.map((x) => (
-                    <LineItem item={x} />
-                  ))}
-                </div>
-              )}
+            <div className="mt-4 overflow-auto" style={{ height: "75vh" }}>
+              <div className="">
+                {lyrics.map((x) => (
+                  <LineItem item={x} />
+                ))}
+              </div>
             </div>
           </div>
         )}

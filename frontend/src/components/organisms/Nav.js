@@ -18,19 +18,30 @@ export default function Nav({ className = "" }) {
               <Spinner />
             </button>
           )}
-          {/* <Button border={false} icon="rewind-fill" text="marmalade" /> */}
-          <Link to={"/"} className="btn btn-sm border-0">
+          <Link to={"/"} className="btn btn-sm border-0 me-2">
             <i className="bi bi-rewind-fill me-2"></i>
             marmalade
           </Link>
-          <Link
-            to={"/search"}
-            className={
-              "btn btn-sm" + (location.pathname === "/search" ? " active" : "")
-            }>
-            <i className="bi bi-quote me-2"></i>
-            Lyrics
-          </Link>
+          <div className="btn-group">
+            <Link
+              to={"/lyrics"}
+              className={
+                "btn btn-sm" +
+                (location.pathname === "/lyrics" ? " active" : "")
+              }>
+              <i className="bi bi-quote me-2"></i>
+              Lyrics
+            </Link>
+            <Link
+              to={"/charts"}
+              className={
+                "btn btn-sm" +
+                (location.pathname === "/charts" ? " active" : "")
+              }>
+              <i className="bi bi-bar-chart-fill me-2"></i>
+              Charts
+            </Link>
+          </div>
         </div>
         <ButtonGroup>
           <Button

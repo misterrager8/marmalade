@@ -2,6 +2,7 @@ from collections import Counter, OrderedDict
 import json
 import click
 from flask import current_app, request, send_from_directory
+import billboard
 
 from marmalade import lyrics
 from .lyrics import genius
@@ -60,3 +61,19 @@ def get_lyrics():
         msg = str(e)
 
     return {"success": success, "msg": msg, "lyrics": lyrics, "lyricData": []}
+
+
+@current_app.post("/hot_100")
+def hot_100():
+    success = True
+    msg = ""
+    entries = []
+
+    try:
+        entries = json.loads(billboard.ChartData("hot-100").json()).get("entries")
+
+    except Exception as e:
+        success = False
+        msg = str(e)
+
+    return {"success": success, "msg": msg, "entries": entries}
