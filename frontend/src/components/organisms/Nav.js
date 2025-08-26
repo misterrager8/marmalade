@@ -41,6 +41,14 @@ export default function Nav({ className = "" }) {
               <i className="bi bi-bar-chart-fill me-2"></i>
               Charts
             </Link>
+            <Link
+              to={"/songs"}
+              className={
+                "btn btn-sm" + (location.pathname === "/songs" ? " active" : "")
+              }>
+              <i className="bi bi-music-note me-2"></i>
+              Songs
+            </Link>
           </div>
         </div>
         <ButtonGroup>

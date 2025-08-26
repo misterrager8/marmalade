@@ -1,3 +1,3 @@
-export default function Icon({ className = "" }) {
-  return <div className={className}></div>;
+export default function Icon({ name, className = "" }) {
+  return <i className={className + (" bi bi-" + name)}></i>;
 }

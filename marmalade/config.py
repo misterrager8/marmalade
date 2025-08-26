@@ -5,3 +5,4 @@ import dotenv
 dotenv.load_dotenv()
 
 PORT = os.getenv("port") or "3018"
+SQLALCHEMY_DATABASE_URI = os.getenv("db")
